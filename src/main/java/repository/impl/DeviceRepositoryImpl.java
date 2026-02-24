@@ -29,4 +29,26 @@ public class DeviceRepositoryImpl implements DeviceRepository {
         devices.add(device1);
         System.out.println("Device repository initialized with: "+devices.size()+" devices");
     }
+
+    @Override
+    public boolean exists(int deviceId) {
+        for (Device device : devices) {
+            if (device.getId() == deviceId){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public Device getDevice(int deviceId) {
+        if (exists(deviceId)){
+            for (Device device : devices) {
+                if (device.getId() == deviceId){
+                    return device;
+                }
+            }
+        }
+        return null;
+    }
 }

@@ -101,4 +101,12 @@ public class Device {
     public void setUnit(String unit) {
         this.unit = unit;
     }
+
+    public ArrayList<Measurement> getMeasurements() {
+        return measurements;
+    }
+
+    public void setMeasurements(ArrayList<Measurement> measurements) {
+        this.measurements = measurements;
+    }
 }

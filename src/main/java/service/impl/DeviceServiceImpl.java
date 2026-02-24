@@ -3,9 +3,10 @@ package service.impl;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import repository.DeviceRepository;
+import service.DeviceService;
 
 @Service
-public class DeviceServiceImpl {
+public class DeviceServiceImpl  implements DeviceService {
 
     private DeviceRepository deviceRepository;
 
