@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Repositorios-->
+    <bean id="measurementRepository" class="repository.impl.MeasurementRepositoryImpl"/>
+
+    <bean id="deviceRepository" class="repository.impl.DeviceRepositoryImpl"/>
+
+    <!--Service-->
+    <bean id="measurementService" class="service.impl.MeasurementServiceImpl">
+        <constructor-arg ref="measurementRepository"/>
+        <constructor-arg ref="deviceRepository"/>
+    </bean>
+
+    <bean id="deviceService" class="service.impl.DeviceServiceImpl">
+        <constructor-arg ref="deviceRepository"/>
+    </bean>
+
+</beans>
