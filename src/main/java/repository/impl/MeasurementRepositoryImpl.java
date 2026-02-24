@@ -1,5 +1,6 @@
 package repository.impl;
 
+import jakarta.annotation.PostConstruct;
 import model.Measurement;
 import org.springframework.stereotype.Repository;
 import repository.MeasurementRepository;
@@ -17,12 +18,16 @@ public class MeasurementRepositoryImpl implements MeasurementRepository {
 
     @Override
     public void addMeasurement(Measurement measurement) {
-
+        measurements.add(measurement);
+        System.out.println("Measurement added: " + measurement.toString());
     }
 
+    @PostConstruct
     @Override
     public void init() {
         Measurement measurement1 = new Measurement(1,2000,80,1);
         Measurement measurement2 = new Measurement(2,4000,120,1);
+        measurements.add(measurement1);
+        measurements.add(measurement2);
     }
 }
