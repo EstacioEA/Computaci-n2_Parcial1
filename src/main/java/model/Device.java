@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Device {
     private int id;
     private String name;
@@ -10,6 +12,7 @@ public class Device {
     private long samplingPeriod;
     private long timeTolerance;
     private String unit;
+    private ArrayList<Measurement> measurements;
 
     public Device() {
     }
@@ -24,6 +27,7 @@ public class Device {
         this.samplingPeriod = samplingPeriod;
         this.timeTolerance = timeTolerance;
         this.unit = unit;
+        this.measurements = new ArrayList<>();
     }
 
     public int getId() {
