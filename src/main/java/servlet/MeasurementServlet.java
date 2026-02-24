@@ -13,7 +13,7 @@ import service.MeasurementService;
 import java.io.IOException;
 import java.io.InputStream;
 
-@WebServlet
+@WebServlet("/measurement")
 public class MeasurementServlet extends HttpServlet {
 
     private MeasurementService measurementService;
@@ -40,6 +40,6 @@ public class MeasurementServlet extends HttpServlet {
         measurement.setValue(Double.parseDouble(req.getParameter("Value")));
         measurement.setDeviceId(Integer.parseInt(req.getParameter("Schedule")));
         measurementService.addMeasurement(measurement);
-        resp.sendRedirect("./measurements");
+        resp.sendRedirect("./measurement");
     }
 }
